@@ -1,0 +1,31 @@
+# This workflow performs automatic versioning and generation of release notes.
+
+name: Release New Version
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  semantic-release:
+    runs-on: ubuntu-latest
+    name: Semantic Versioning and Release
+    steps:
+    - name: Fetch Git entire history for all branches and tags
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        ref: ${{ github.event.pull_request.base.ref }}
+
+    - name: Use Node v18
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+
+    - name: Install Dependencies
+      run: yarn add semantic-release
+
+    - name: Run Semantic Release
+      id: Release
+      run: |
+        npx semantic-release

@@ -1,5 +1,4 @@
 # This workflow scans for vulnerables in the `lib` folder whenver a Pull Request is opened/updated. 
-# Performs semantic versioning and generation of release notes.
 
 name: lib - Scan CVEs
 
@@ -33,13 +32,3 @@ jobs:
     - name: Scan `lib` dependencies
       run: source scripts/scan.sh
       working-directory: lib/
-
-  semantic-release:
-    name: Semantic Versioning and Release
-    needs: scan
-    runs-on: ubuntu-latest
-    steps:
-    - name: Release
-      id: Release
-      run: |
-        npx semantic-release
