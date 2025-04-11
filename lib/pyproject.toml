@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lib"
-version = "2.1.5"
+version = "{version}"
 description = "Sample App"
 authors = ["Amos Syuma <amossyuma@hidimaging.com>"]
 license = "Copyright Hi-D Imaging AG"
@@ -9,6 +9,15 @@ readme = "README.md"
 packages = [
     {"include" = "lib"},
 ]
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:tool.portry.version"
+]
+branch = "main"
+build_command = "pip install poetry && poetry build"
+commit_version_number = true
+version_source = "tag"
 
 [tool.poetry.dependencies]
 python = ">=3.11, <4.0.0"
