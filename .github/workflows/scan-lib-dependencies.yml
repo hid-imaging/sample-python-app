@@ -1,0 +1,29 @@
+name: lib - Scan CVEs
+
+on: pull_request
+
+jobs:
+    scan:
+        name: CVE Scan for `lib`
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout Repository
+                uses: actions/checkout@v4
+            -   name: Setup Python
+                uses: actions/setup-python@v5
+                with:
+                    python-version: 3.12
+            -   name: Install `jq`
+                run: |
+                    sudo apt-get update && sudo apt-get install -y jq
+                    jq --version
+            -   name: Install `Poetry`
+                run: |
+                    curl -sSL https://install.python-poetry.org | python3 -
+                    export PATH=$HOME/.local/bin:$PATH
+                    poetry --version
+                    poetry self update 1.8
+                    poetry self add poetry-audit-plugin
+            -   name: Scan `lib` dependencies
+                run: ./scan.sh
+                working-directory: lib/

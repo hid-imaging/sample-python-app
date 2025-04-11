@@ -1,0 +1,10 @@
+{
+    "vulnerabilities": [],
+    "metadata": {
+      "auditVersion": "0.4.0",
+      "poetry.lock": {
+        "updated": false,
+        "fresh": true
+      }
+    }
+  }

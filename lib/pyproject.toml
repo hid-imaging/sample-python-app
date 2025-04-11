@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "lib"
+version = "2.1.5"
+description = "Sample App"
+authors = ["Amos Syuma <amossyuma@hidimaging.com>"]
+license = "Copyright Hi-D Imaging AG"
+readme = "README.md"
+
+packages = [
+    {"include" = "lib"},
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11, <4.0.0"
+antspyx = "~0.4.2"
+einops = "~0.8.0"
+geomdl = "~5.3.1"
+h5py = "~3.12.1"
+lightning = "~2.4.0"
+matplotlib = "~3.9.1"
+meshio = "~5.3.5"
+monai = "~1.4.0"
+networkx = "~3.4.2"
+opencv-python = "~4.10.0.84"
+pandas = "~2.2.2"
+pydicom = "~2.4.4"
+pymeshfix = "~0.17.0"
+pynrrd = "~1.0.0"
+pyvista = "~0.44.0"
+scikit-image = "~0.24.0"
+scikit-learn = "~1.5.1"
+scipy = "~1.14.0"
+SimpleITK = "~2.3.1"
+tensorboard = "~2.17.0"
+torch = "~2.3.1"
+torchvision = "~0.18.1"
+pydantic = "^2.8.2"
+graphviz = "~0.20.3"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = "~7.6.4"
+cyclonedx-bom = "~5.1.0"
+hypothesis = "~6.115.5"
+jupyterlab = "~4.2.5"
+pytest-html = "~4.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
