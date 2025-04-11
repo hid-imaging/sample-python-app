@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lib"
-version = "{version}"
+version = "2.1.5"
 description = "Sample App"
 authors = ["Amos Syuma <amossyuma@hidimaging.com>"]
 license = "Copyright Hi-D Imaging AG"
@@ -45,7 +45,6 @@ torch = "~2.3.1"
 torchvision = "~0.18.1"
 pydantic = "^2.8.2"
 graphviz = "~0.20.3"
-
 
 [tool.poetry.group.dev.dependencies]
 coverage = "~7.6.4"
