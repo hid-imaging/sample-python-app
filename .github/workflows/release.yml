@@ -9,6 +9,8 @@ on:
 jobs:
   semantic-release:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.PAT }}
     name: Semantic Versioning and Release
     steps:
     - name: Fetch Git entire history for all branches and tags
