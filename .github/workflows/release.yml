@@ -17,6 +17,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
+        token: ${{ secrets.PAT }}
         ref: ${{ github.event.pull_request.base.ref }}
 
     - name: Use Node >=20.8.1
@@ -29,5 +30,7 @@ jobs:
 
     - name: Run Semantic Release
       id: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.PAT }}
       run: |
         npx semantic-release
