@@ -16,7 +16,6 @@ jobs:
     - name: Fetch Git entire history for all branches and tags
       uses: actions/checkout@v3
       with:
-        persist-credentials: false
         fetch-depth: 0
         ref: ${{ github.event.pull_request.base.ref }}
 
