@@ -25,5 +25,5 @@ jobs:
                     poetry self update 1.8
                     poetry self add poetry-audit-plugin
             -   name: Scan `lib` dependencies
-                run: ./scripts/scan.sh
+                run: source scripts/scan.sh
                 working-directory: lib/
