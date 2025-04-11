@@ -10,6 +10,15 @@ packages = [
     {"include" = "lib"},
 ]
 
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:tool.portry.version"
+]
+branch = "main"
+build_command = "pip install poetry && poetry build"
+commit_version_number = true
+version_source = "tag"
+
 [tool.poetry.dependencies]
 python = ">=3.11, <4.0.0"
 antspyx = "~0.4.2"
@@ -36,7 +45,6 @@ torch = "~2.3.1"
 torchvision = "~0.18.1"
 pydantic = "^2.8.2"
 graphviz = "~0.20.3"
-
 
 [tool.poetry.group.dev.dependencies]
 coverage = "~7.6.4"
