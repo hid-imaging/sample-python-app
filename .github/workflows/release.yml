@@ -26,7 +26,7 @@ jobs:
         node-version: latest
 
     - name: Install Dependencies
-      run: yarn add semantic-release npm install @semantic-release/changelog @semantic-release/git
+      run: yarn add semantic-release @semantic-release/changelog @semantic-release/git
 
     - name: Run Semantic Release
       id: Release
